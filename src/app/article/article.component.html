@@ -1,0 +1,113 @@
+<br>
+<div class="container mt-5">
+  <nav class="navbar navbar-light bg-light">
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" name="name" [(ngModel)]="buscarElemento" placeholder="Qué artículo deseas buscar?" aria-label="Search" required>
+      <button class="btn btn-success my-2 my-sm-0" type="submit" (click)="buscar()">Buscar Artículo</button>
+    </form>
+  </nav>
+</div>
+<br>
+
+<div class="container">
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Agregar Artículo</button>
+</div>
+
+<div class="container row" id="container2">
+  <div class="card border-success col-sm-6 mx-3 mt-3 mb-3" style="max-width: 18rem;" *ngFor="let article of article_model, index as i">
+    <figure class="mt-3">
+      <img class="card-img-top" src="{{article.image}}" alt="Card image cap">
+    </figure>
+    <div class="card-header">Artículo: {{i+1}}</div>
+    <div class="card-body text-success">
+      <h5 class="card-title">{{article.title}}</h5>
+      <p><ngb-progressbar value="{{article.votes}}"></ngb-progressbar></p>
+      <p class="card-text">N° de Votos: {{article.votes}}</p>
+    </div>
+    <div class="float-right mx-3" (click)="aumentar(i)">
+        <i class="fas fa-sort-amount-up"></i><p class="float-right mx-3">Aumentar Voto</p>
+    </div>
+    <div class="float-right mx-3" (click)="disminuir(i)">
+        <i class="fas fa-sort-amount-down"></i><p class="float-right mx-3">Disminuir Voto</p>
+    </div>
+    <div class="float-right mx-3">
+      <i class="fas fa-edit" data-toggle="modal" data-target="#exampleModalCenter1" (click)="editarArticle=article"></i><p class="float-right mx-3">Editar Articulo</p>
+    </div>
+    <div class="float-right mx-3">
+      <i class="fas fa-trash-alt" data-toggle="modal" data-target="#exampleModalCenter2" (click)="editarArticle2=article"></i><p class="float-right mx-3">Eliminar Artículo</p>
+    </div>
+    <app-rating></app-rating>
+  </div>
+</div>
+
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">Agregar Curso</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form (ngSubmit)="agregar()">
+            <input 
+            type="text" placeholder="Ingresa tu nombre" 
+            name="name" class="form-control"
+            [(ngModel)]="newitem.title" required
+            >
+            <button class="btn btn-warning mt-3" type="submit">Guardar</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">Modificar {{editarArticle.title}}</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form (ngSubmit)="modificar()">
+            <input 
+            type="text" placeholder="Ingresa tu nombre" 
+            name="name" class="form-control"
+            [(ngModel)]="newitem2" required
+            >
+            <button class="btn btn-warning mt-3" type="submit">Guardar</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalCenterTitle">Estas seguro que quieres eliminar: {{editarArticle2.title}}</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" (click)="eliminar()" data-dismiss="modal">Si</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  

@@ -1,0 +1,22 @@
+.form-inline{
+    width: 100%;
+}
+.form-control{
+    width:80%
+}
+.card figure{
+    width: 100%;
+    height: 100px;
+}
+.card figure img{
+    height: 100%;
+    width: auto;
+    display: block;
+    margin: auto;
+}
+.container p, .container h5{
+    text-align: center;
+}
+#container2{
+    margin-left: 13%;
+}

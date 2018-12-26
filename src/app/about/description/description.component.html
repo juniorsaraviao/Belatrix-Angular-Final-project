@@ -1,0 +1,48 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <div class="card-group">
+      <div class="card">
+        <h2>Mi Información</h2>
+          <ngb-accordion> 
+            <ngb-panel id="preventchange-1" title="Información" class="bg-primary">
+              <ng-template ngbPanelContent>
+                <p>Apellidos : Saravia Oria</p>  
+                <p>Nombres   : Junior Eduardo</p> 
+              </ng-template>
+            </ngb-panel>
+            <ngb-panel id="preventchange-2" title="Estudios">
+              <ng-template ngbPanelContent>
+                <p>Primaria  : Colegio "Inmaculada Concepción"</p> 
+                <p>Secundaria: Colegio "San Columbano"</p>
+                <p>Superior  : "Universidad Nacional de Ingeniería - UNI"</p>
+                <p>Carrera   : Ingeniería de Sistemas </p>
+              </ng-template>
+            </ngb-panel>
+            <ngb-panel id="preventchange-3" title="Descripción">
+              <ng-template ngbPanelContent>
+                Soy Junior Saravia, desde niño tuve mucha afinidad por los números, en parte porque mis padres son profesores de matemática. Gracias a esta pasión pude complir parte de mis objetivos, además que me permitió explorar los diversos horizontes del conocimiento así como desarrollar mi pensamiento analítico y ser autodidacta.
+                Actualmente soy estudiante de la Universidad Nacional de Ingeniería, cursando el 9no ciclo. La UNI para mí significa la universidad dónde cumples tus sueños, metas y objetivos. Entrar es un reto, mantenerse es mucho más complicado, pero es muy gratificante.
+                Me gusta estar investigando constantemente y descubrir nuevas cosas, así como practicar fútbol en mis tiempos libres.
+              </ng-template>
+            </ngb-panel>
+          </ngb-accordion>
+        </div>
+        <div class="card">
+          <h2>Calendario</h2>
+          <div class="container">
+            <ngb-datepicker #dp [(ngModel)]="model" (navigate)="date = $event.next"></ngb-datepicker>
+          </div>
+        </div>
+        <div class="card">
+          <hr/>
+          <button class="btn btn-sm btn-outline-primary mr-2" (click)="selectToday()">Fecha Actual</button>
+          <button class="btn btn-sm btn-outline-primary mr-2" (click)="dp.navigateTo()">Mes Actual</button>
+          <button class="btn btn-sm btn-outline-primary mr-2" (click)="dp.navigateTo({year: 2013, month: 2})">A Febrero del 2013</button>
+          <hr/>
+        </div>
+    </div>
+  </div>
+</div>
+<br>
+
+

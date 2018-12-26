@@ -1,0 +1,107 @@
+{
+  "books": [
+    {
+      "id": 101,
+      "title": "Zero to One",
+      "author": "Peter Thiel",
+      "year_published": 2014,
+      "rating": 4.03,
+      "price": "11"
+    },
+    {
+      "id": 102,
+      "title": "The Origin of Species",
+      "author": "Charles Darwin",
+      "year_published": 1889,
+      "rating": 4.2,
+      "price": "18"
+    },
+    {
+      "id": 103,
+      "title": "AngularJS 2",
+      "author": " Daniel Green",
+      "year_published": 2017,
+      "rating": 5.2,
+      "price": 10,
+      "imgUrl": "https://images-na.ssl-images-amazon.com/images/I/51TXjVsADfL._SY346_.jpg"
+    },
+    {
+      "id": 104,
+      "title": "Mi first book",
+      "author": "Juan Carlos",
+      "year_published": "1985",
+      "rating": "12",
+      "price": "15.9"
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "title": "Angular 5",
+      "link": "http://angular.io",
+      "votes": 12,
+      "image": "/src/app/img/angular.png"
+    },
+    {
+      "id": 2,
+      "title": "Fullstack",
+      "link": "http://fullstack.io",
+      "votes": 16,
+      "image": "/src/app/img/fullstack.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Stack Overflow 6",
+      "link": "https://stackoverflow.com",
+      "votes": 12,
+      "image":"/src/app/img/stackoverflow.jpg"
+    },
+    {
+      "title": "Material UI jc",
+      "link": "https://material.angularjs.org",
+      "votes": 4,
+      "id": 4,
+      "image":"/src/app/img/materialuijc.png"
+    },
+    {
+      "title": "universal angular",
+      "link": "https://universal.angular.io/",
+      "votes": 4,
+      "id": 5,
+      "image":"/src/app/img/universal-angular.png"
+    },
+    {
+      "title": "Material UI ",
+      "link": "https://material.angularjs.org",
+      "votes": 13,
+      "id": 6,
+      "image":"/src/app/img/materialui.png"
+    },
+    {
+      "title": "Material UI67",
+      "link": "https://material.angularjs.org",
+      "votes": 5,
+      "id": 7,
+      "image":"/src/app/img/materialui67.jpg"
+    },
+    {
+      "title": "microsoft.com",
+      "link": "http://www.microsoft.com",
+      "votes": 3,
+      "id": 8,
+      "image":"/src/app/img/microsoft.png"
+    },
+    {
+      "title":"React JS",
+      "id": 9,
+      "votes":0,
+      "image":"/src/app/img/react.png"
+    }
+  ],
+  "users": [
+    {
+      "username": "jcyovera",
+      "password": "123456"
+    }
+  ]
+}
